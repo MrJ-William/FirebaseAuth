@@ -51,6 +51,7 @@ class CheckMailViewController: UIViewController {
                         
                         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         let next: MainPageViewController = storyboard.instantiateInitialViewController() as! MainPageViewController
+                        next.modalPresentationStyle = .fullScreen
                         self.present(next, animated: true, completion: nil)
                         
                     } else if self.auth.currentUser?.isEmailVerified == false {

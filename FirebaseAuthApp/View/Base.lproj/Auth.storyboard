@@ -12,7 +12,7 @@
         <!--Explain View Controller-->
         <scene sceneID="pPS-sU-BmW">
             <objects>
-                <viewController id="x5S-ZE-PY8" customClass="ExplainViewController" customModule="MrUnivercityApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="x5S-ZE-PY8" customClass="ExplainViewController" customModule="FirebaseAuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sdE-pO-xpy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +89,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="goAction:" destination="lpp-An-egW" eventType="touchUpInside" id="eYm-QW-ooI"/>
                                     <action selector="nextVC:" destination="lpp-An-egW" eventType="touchUpInside" id="qxT-Ik-Gob"/>
                                     <segue destination="x5S-ZE-PY8" kind="presentation" identifier="explainVC" animates="NO" modalPresentationStyle="fullScreen" id="12K-nA-5dE"/>
                                 </connections>
@@ -129,7 +128,7 @@
         <!--Select Login View Controller-->
         <scene sceneID="459-Rn-BSA">
             <objects>
-                <viewController id="EqJ-En-yVs" customClass="SelectLoginViewController" customModule="MrUnivercityApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EqJ-En-yVs" customClass="SelectLoginViewController" customModule="FirebaseAuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zxm-pd-JYt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,7 +224,7 @@
         <!--New Login View Controller-->
         <scene sceneID="uSg-sY-ZaL">
             <objects>
-                <viewController id="2BZ-L4-pnE" customClass="NewLoginViewController" customModule="MrUnivercityApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2BZ-L4-pnE" customClass="NewLoginViewController" customModule="FirebaseAuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8B5-uR-nvR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -328,7 +327,7 @@
         <!--Login Type Select View Controller-->
         <scene sceneID="tix-1d-kEP">
             <objects>
-                <viewController id="7OM-j3-b2g" customClass="LoginTypeSelectViewController" customModule="MrUnivercityApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7OM-j3-b2g" customClass="LoginTypeSelectViewController" customModule="FirebaseAuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bw3-gl-b4c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -574,7 +573,7 @@
         <!--Login View Controller-->
         <scene sceneID="2WD-eN-50U">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="YkF-Vw-EQQ" customClass="LoginViewController" customModule="MrUnivercityApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="YkF-Vw-EQQ" customClass="LoginViewController" customModule="FirebaseAuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lpz-HI-uEV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -819,7 +818,7 @@
         <!--Check Mail View Controller-->
         <scene sceneID="I68-1p-pnb">
             <objects>
-                <viewController storyboardIdentifier="CheckMailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QaA-82-MZ8" customClass="CheckMailViewController" customModule="MrUnivercityApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckMailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QaA-82-MZ8" customClass="CheckMailViewController" customModule="FirebaseAuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JZC-Qi-glS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

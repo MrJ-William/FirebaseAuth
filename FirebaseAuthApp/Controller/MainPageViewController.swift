@@ -17,21 +17,16 @@ class MainPageViewController: UIViewController {
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
         if UserDefaults.standard.object(forKey: "userID") != nil{
-            
+
             let userID = UserDefaults.standard.object(forKey: "userID") as! String
             print(userID)
-            
+
         }else{
-            
-            // 画面遷移
-            let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-            let next: WolkThroughViewController = storyboard.instantiateInitialViewController() as! WolkThroughViewController
-            next.modalPresentationStyle = .fullScreen
-            self.present(next, animated: false, completion: nil)
-            print("画面遷移")
-            
+            moveToAuth()
         }
     }
     
@@ -45,16 +40,13 @@ class MainPageViewController: UIViewController {
             
             do{
                 try Auth.auth().signOut()
+                UserDefaults.standard.removeObject(forKey: "userID")
                 
             }catch let error as NSError{
                 print(error)
             }
             
-            let storyboard: UIStoryboard = UIStoryboard(name: "Auth", bundle: nil)
-            let next: WolkThroughViewController = storyboard.instantiateInitialViewController() as! WolkThroughViewController
-            next.modalPresentationStyle = .fullScreen
-            self.present(next, animated: true, completion: nil)
-            
+            self.moveToAuth()
             print("Logout")
         })
         
@@ -74,5 +66,13 @@ class MainPageViewController: UIViewController {
         
     }
     
+    func moveToAuth() {
+        // 画面遷移
+        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+        let next: WolkThroughViewController = storyboard.instantiateInitialViewController() as! WolkThroughViewController
+        next.modalPresentationStyle = .fullScreen
+        self.present(next, animated: false, completion: nil)
+        print("画面遷移")
+    }
     
 }

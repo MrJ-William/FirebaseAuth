@@ -9,7 +9,6 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import GoogleSignIn
-import CryptoKit
 
 class NewLoginViewController: UIViewController {
     
@@ -19,10 +18,6 @@ class NewLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //gmailLogin
-//        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-//        GIDSignIn.sharedInstance().delegate = self
         
         UIBuild()
 
@@ -66,14 +61,12 @@ class NewLoginViewController: UIViewController {
             
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let next: MainPageViewController = storyboard.instantiateInitialViewController() as! MainPageViewController
+            next.modalPresentationStyle = .fullScreen
             self.present(next, animated: true, completion: nil)
   
         } else {
             print("UserIDが存在しません。")
-            
-            //gmail signIn
-//            GIDSignIn.sharedInstance()?.presentingViewController = self
-//            GIDSignIn.sharedInstance().signIn()
+
             guard let clientID = FirebaseApp.app()?.options.clientID else { return }
             
             // Create Google Sign In configuration object.
@@ -136,39 +129,6 @@ class NewLoginViewController: UIViewController {
         }
     
     }
-//
-//    //gmailログイン
-//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-//        print("Google Sing In didSignInForUser")
-//        if let error = error {
-//          print(error.localizedDescription)
-//          return
-//        }
-//
-//        guard let authentication = user.authentication else { return }
-//        let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)
-//
-//    // When user is signed in
-//        Auth.auth().signIn(with: credential, completion: { (user, error) in
-//
-//            if error != nil {
-//                //ログイン成功
-//                print("Login success")
-//                //画面遷移
-//                let settingRoleViewController = self.storyboard?.instantiateViewController(withIdentifier: "SettingRoleViewController") as! SettingRoleViewController
-//                settingRoleViewController.modalPresentationStyle = .fullScreen
-//                self.present(settingRoleViewController, animated: true, completion: nil)
-//
-//            } else {
-//
-//                //なぜnilになってしまうのかわからない。(credential)
-//                print(error?.localizedDescription as Any)
-//                return
-//            }
-//
-//        })
-//    }
-//
     
     func UIBuild() {
         
