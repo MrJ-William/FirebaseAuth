@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FirebaseAuthUI
 import FirebaseAuth
 import TextFieldEffects
 
@@ -19,9 +18,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var mailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
-    var ref: DatabaseReference!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,11 +39,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func forgotPasswordAction(_ sender: Any) {
         
-        let transition = CATransition()
-        transition.duration = 0.2
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromRight
-        view.window!.layer.add(transition, forKey: kCATransition)
+        sendRightFromLeft()
         performSegue(withIdentifier: "toForget", sender: nil)
 
         }
@@ -69,16 +61,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 print("Current user id is \(String(describing: userID))")
                 UserDefaults.standard.set(userID, forKey: "userID")
                 
-                let storyboard: UIStoryboard = UIStoryboard(name: "Cirecle", bundle: nil)
-                let next: MenuNavigationController = storyboard.instantiateInitialViewController() as! MenuNavigationController
-                
-                let transition = CATransition()
-                transition.duration = 0.2
-                transition.type = CATransitionType.push
-                transition.subtype = CATransitionSubtype.fromLeft
-                self.view.window!.layer.add(transition, forKey: kCATransition)
-                       
-                next.modalPresentationStyle = .fullScreen
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let next: MainPageViewController = storyboard.instantiateInitialViewController() as! MainPageViewController
                 self.present(next, animated: true, completion: nil)
                 
             }else {

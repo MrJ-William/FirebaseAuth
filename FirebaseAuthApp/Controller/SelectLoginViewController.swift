@@ -33,7 +33,7 @@ class SelectLoginViewController: UIViewController {
     
     
     @IBAction func back(_ sender: Any) {
-        dismiss(animated: nil, completion: nil)
+        dismiss(animated: false, completion: nil)
         sendLeftFromRight()
     }
     

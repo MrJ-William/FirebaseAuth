@@ -8,6 +8,7 @@ target 'FirebaseAuthApp' do
   pod 'lottie-ios'
   pod 'PKHUD', '~> 5.0'
   pod 'TextFieldEffects'
+  pod 'GoogleSignIn'
 
   # Pods for FirebaseAuthApp
 

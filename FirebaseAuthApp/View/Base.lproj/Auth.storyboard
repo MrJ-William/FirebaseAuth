@@ -124,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DaG-5a-Btg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2701" y="96"/>
+            <point key="canvasLocation" x="-2972" y="96"/>
         </scene>
         <!--Select Login View Controller-->
         <scene sceneID="459-Rn-BSA">
@@ -666,7 +666,7 @@
                                 </state>
                                 <connections>
                                     <action selector="forgotPasswordAction:" destination="YkF-Vw-EQQ" eventType="touchUpInside" id="N6a-Yw-Viu"/>
-                                    <segue destination="FbC-lX-vLO" kind="show" identifier="toForget" animates="NO" id="O3i-BC-7y8"/>
+                                    <segue destination="FbC-lX-vLO" kind="presentation" identifier="toForget" animates="NO" modalPresentationStyle="fullScreen" id="O3i-BC-7y8"/>
                                 </connections>
                             </button>
                         </subviews>
