@@ -9,21 +9,43 @@
 /* Begin PBXBuildFile section */
 		69E32C41279D20F800F70659 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E32C40279D20F800F70659 /* AppDelegate.swift */; };
 		69E32C43279D20F800F70659 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E32C42279D20F800F70659 /* SceneDelegate.swift */; };
-		69E32C45279D20F800F70659 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E32C44279D20F800F70659 /* ViewController.swift */; };
-		69E32C48279D20F800F70659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E32C46279D20F800F70659 /* Main.storyboard */; };
+		69E32C45279D20F800F70659 /* SelectLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E32C44279D20F800F70659 /* SelectLoginViewController.swift */; };
+		69E32C48279D20F800F70659 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E32C46279D20F800F70659 /* Auth.storyboard */; };
 		69E32C4A279D20FC00F70659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E32C49279D20FC00F70659 /* Assets.xcassets */; };
 		69E32C4D279D20FC00F70659 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E32C4B279D20FC00F70659 /* LaunchScreen.storyboard */; };
+		69E32C5F279D4A7400F70659 /* WolkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E32C5E279D4A7400F70659 /* WolkThroughViewController.swift */; };
+		69E32C61279D4A8B00F70659 /* ExplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E32C60279D4A8B00F70659 /* ExplainViewController.swift */; };
+		69E32C63279D4AB400F70659 /* NewLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E32C62279D4AB400F70659 /* NewLoginViewController.swift */; };
+		69E32C65279D4AC900F70659 /* RegistMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E32C64279D4AC900F70659 /* RegistMailViewController.swift */; };
+		69E32C67279D4ADB00F70659 /* LoginTypeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E32C66279D4ADB00F70659 /* LoginTypeSelectViewController.swift */; };
+		69E32C69279D4AF000F70659 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E32C68279D4AF000F70659 /* LoginViewController.swift */; };
+		69E32C6B279D4B0300F70659 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E32C6A279D4B0300F70659 /* ForgotPasswordViewController.swift */; };
+		69E32C6E279D4B7800F70659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69E32C6D279D4B7800F70659 /* Main.storyboard */; };
+		69E32C70279D4EBC00F70659 /* CheckMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E32C6F279D4EBC00F70659 /* CheckMailViewController.swift */; };
+		F02FE0EFA50BC9D80CC2C9C1 /* Pods_FirebaseAuthApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED2AB65EB5B5D27F3A2381C /* Pods_FirebaseAuthApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CF694FD8E21ADC4851BD0C3 /* Pods-FirebaseAuthApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAuthApp.release.xcconfig"; path = "Target Support Files/Pods-FirebaseAuthApp/Pods-FirebaseAuthApp.release.xcconfig"; sourceTree = "<group>"; };
 		69E32C3D279D20F800F70659 /* FirebaseAuthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseAuthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E32C40279D20F800F70659 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69E32C42279D20F800F70659 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		69E32C44279D20F800F70659 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		69E32C47279D20F800F70659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		69E32C44279D20F800F70659 /* SelectLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLoginViewController.swift; sourceTree = "<group>"; };
+		69E32C47279D20F800F70659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
 		69E32C49279D20FC00F70659 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69E32C4C279D20FC00F70659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69E32C4E279D20FC00F70659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69E32C5E279D4A7400F70659 /* WolkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolkThroughViewController.swift; sourceTree = "<group>"; };
+		69E32C60279D4A8B00F70659 /* ExplainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainViewController.swift; sourceTree = "<group>"; };
+		69E32C62279D4AB400F70659 /* NewLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoginViewController.swift; sourceTree = "<group>"; };
+		69E32C64279D4AC900F70659 /* RegistMailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistMailViewController.swift; sourceTree = "<group>"; };
+		69E32C66279D4ADB00F70659 /* LoginTypeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTypeSelectViewController.swift; sourceTree = "<group>"; };
+		69E32C68279D4AF000F70659 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		69E32C6A279D4B0300F70659 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		69E32C6D279D4B7800F70659 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		69E32C6F279D4EBC00F70659 /* CheckMailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMailViewController.swift; sourceTree = "<group>"; };
+		CED2AB65EB5B5D27F3A2381C /* Pods_FirebaseAuthApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseAuthApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F499808653576AC49F1B00B2 /* Pods-FirebaseAuthApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAuthApp.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseAuthApp/Pods-FirebaseAuthApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +53,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F02FE0EFA50BC9D80CC2C9C1 /* Pods_FirebaseAuthApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A85F7BD319D3E2D48EC5495 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CED2AB65EB5B5D27F3A2381C /* Pods_FirebaseAuthApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		69E32C34279D20F800F70659 = {
 			isa = PBXGroup;
 			children = (
 				69E32C3F279D20F800F70659 /* FirebaseAuthApp */,
 				69E32C3E279D20F800F70659 /* Products */,
+				E452DF5FF8BEDE1B84BCFDEA /* Pods */,
+				2A85F7BD319D3E2D48EC5495 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +91,47 @@
 			children = (
 				69E32C40279D20F800F70659 /* AppDelegate.swift */,
 				69E32C42279D20F800F70659 /* SceneDelegate.swift */,
-				69E32C44279D20F800F70659 /* ViewController.swift */,
-				69E32C46279D20F800F70659 /* Main.storyboard */,
+				69E32C5D279D4A5400F70659 /* Controller */,
+				69E32C6C279D4B5700F70659 /* View */,
 				69E32C49279D20FC00F70659 /* Assets.xcassets */,
 				69E32C4B279D20FC00F70659 /* LaunchScreen.storyboard */,
 				69E32C4E279D20FC00F70659 /* Info.plist */,
 			);
 			path = FirebaseAuthApp;
+			sourceTree = "<group>";
+		};
+		69E32C5D279D4A5400F70659 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69E32C44279D20F800F70659 /* SelectLoginViewController.swift */,
+				69E32C5E279D4A7400F70659 /* WolkThroughViewController.swift */,
+				69E32C60279D4A8B00F70659 /* ExplainViewController.swift */,
+				69E32C62279D4AB400F70659 /* NewLoginViewController.swift */,
+				69E32C64279D4AC900F70659 /* RegistMailViewController.swift */,
+				69E32C66279D4ADB00F70659 /* LoginTypeSelectViewController.swift */,
+				69E32C68279D4AF000F70659 /* LoginViewController.swift */,
+				69E32C6A279D4B0300F70659 /* ForgotPasswordViewController.swift */,
+				69E32C6F279D4EBC00F70659 /* CheckMailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		69E32C6C279D4B5700F70659 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69E32C46279D20F800F70659 /* Auth.storyboard */,
+				69E32C6D279D4B7800F70659 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E452DF5FF8BEDE1B84BCFDEA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F499808653576AC49F1B00B2 /* Pods-FirebaseAuthApp.debug.xcconfig */,
+				4CF694FD8E21ADC4851BD0C3 /* Pods-FirebaseAuthApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +141,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69E32C51279D20FC00F70659 /* Build configuration list for PBXNativeTarget "FirebaseAuthApp" */;
 			buildPhases = (
+				45F7491A856AA8A5FC257CCB /* [CP] Check Pods Manifest.lock */,
 				69E32C39279D20F800F70659 /* Sources */,
 				69E32C3A279D20F800F70659 /* Frameworks */,
 				69E32C3B279D20F800F70659 /* Resources */,
+				D535BA6E2DEC42538CFCB7C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,32 +196,83 @@
 			files = (
 				69E32C4D279D20FC00F70659 /* LaunchScreen.storyboard in Resources */,
 				69E32C4A279D20FC00F70659 /* Assets.xcassets in Resources */,
-				69E32C48279D20F800F70659 /* Main.storyboard in Resources */,
+				69E32C6E279D4B7800F70659 /* Main.storyboard in Resources */,
+				69E32C48279D20F800F70659 /* Auth.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45F7491A856AA8A5FC257CCB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FirebaseAuthApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D535BA6E2DEC42538CFCB7C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirebaseAuthApp/Pods-FirebaseAuthApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirebaseAuthApp/Pods-FirebaseAuthApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirebaseAuthApp/Pods-FirebaseAuthApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		69E32C39279D20F800F70659 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E32C45279D20F800F70659 /* ViewController.swift in Sources */,
+				69E32C70279D4EBC00F70659 /* CheckMailViewController.swift in Sources */,
+				69E32C69279D4AF000F70659 /* LoginViewController.swift in Sources */,
+				69E32C67279D4ADB00F70659 /* LoginTypeSelectViewController.swift in Sources */,
+				69E32C45279D20F800F70659 /* SelectLoginViewController.swift in Sources */,
 				69E32C41279D20F800F70659 /* AppDelegate.swift in Sources */,
 				69E32C43279D20F800F70659 /* SceneDelegate.swift in Sources */,
+				69E32C61279D4A8B00F70659 /* ExplainViewController.swift in Sources */,
+				69E32C65279D4AC900F70659 /* RegistMailViewController.swift in Sources */,
+				69E32C5F279D4A7400F70659 /* WolkThroughViewController.swift in Sources */,
+				69E32C6B279D4B0300F70659 /* ForgotPasswordViewController.swift in Sources */,
+				69E32C63279D4AB400F70659 /* NewLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		69E32C46279D20F800F70659 /* Main.storyboard */ = {
+		69E32C46279D20F800F70659 /* Auth.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				69E32C47279D20F800F70659 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Auth.storyboard;
 			sourceTree = "<group>";
 		};
 		69E32C4B279D20FC00F70659 /* LaunchScreen.storyboard */ = {
@@ -284,6 +404,7 @@
 		};
 		69E32C52279D20FC00F70659 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F499808653576AC49F1B00B2 /* Pods-FirebaseAuthApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +433,7 @@
 		};
 		69E32C53279D20FC00F70659 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CF694FD8E21ADC4851BD0C3 /* Pods-FirebaseAuthApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
