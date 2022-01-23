@@ -17,6 +17,27 @@ class SelectLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIBuild()
+    }
+    
+   
+    @IBAction func newLogin(_ sender: Any) {
+        performSegue(withIdentifier: "newLoginVC", sender: nil)
+        sendRightFromLeft()
+    }
+    
+    @IBAction func selectLogin(_ sender: Any) {
+        performSegue(withIdentifier: "selectLoginVC", sender: nil)
+        sendRightFromLeft()
+    }
+    
+    
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: nil, completion: nil)
+        sendLeftFromRight()
+    }
+    
+    func UIBuild() {
         //UIButton
         newLoginButton.layer.borderColor = UIColor.white.cgColor
         newLoginButton.layer.borderWidth = 1.5
@@ -33,35 +54,6 @@ class SelectLoginViewController: UIViewController {
         signInButton.layer.shadowOffset = CGSize(width: 1, height: 3)
         signInButton.layer.shadowOpacity = 0.7
         signInButton.layer.shadowRadius = 10
-        
-    }
-    
-   
-    @IBAction func newLogin(_ sender: Any) {
-        performSegue(withIdentifier: "newLoginVC", sender: nil)
-        
-        let transition = CATransition()
-        transition.duration = 0.2
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromRight
-        view.window!.layer.add(transition, forKey: kCATransition)
-    }
-    
-    @IBAction func selectLogin(_ sender: Any) {
-        performSegue(withIdentifier: "selectLoginVC", sender: nil)
-        
-        let transition = CATransition()
-        transition.duration = 0.2
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromRight
-        view.window!.layer.add(transition, forKey: kCATransition)
-    }
-    
-    
-    @IBAction func back(_ sender: Any) {
-        
-        dismiss(animated: true, completion: nil)
-        
     }
     
 }

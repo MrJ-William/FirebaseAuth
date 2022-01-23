@@ -25,22 +25,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        mailTextField.underlined()
-//        passwordTextField.underlined()
-        loginButton.layer.cornerRadius = 18.0
-        mailTextField.delegate = self
-        passwordTextField.delegate = self
-        
-        //UIButton
-        loginButton.layer.borderColor = UIColor.white.cgColor
-        loginButton.layer.borderWidth = 1.5
-        loginButton.layer.cornerRadius = 18
-        loginButton.layer.shadowColor = UIColor.lightGray.cgColor
-        loginButton.layer.shadowOffset = CGSize(width: 1, height: 3)
-        loginButton.layer.shadowOpacity = 0.7
-        loginButton.layer.shadowRadius = 10
-        
+
+        UIBuild()
         //キーボード以外のタッチで閉じる
         hideKeyboardWhenTappedAround()
 
@@ -108,39 +94,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     }
     
-//    @IBAction func nextRegister(_ sender: Any) {
-//
-//               let transition = CATransition()
-//               transition.duration = 0.2
-//               transition.type = CATransitionType.push
-//               transition.subtype = CATransitionSubtype.fromRight
-//               view.window!.layer.add(transition, forKey: kCATransition)
-//               performSegue(withIdentifier: "nextRegister", sender: nil)
-//
-//    }
-    
     
     @IBAction func backAction(_ sender: Any) {
-        
-        let transition = CATransition()
-        transition.duration = 0.2
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromLeft
-        view.window!.layer.add(transition, forKey: kCATransition)
+        sendLeftFromRight()
         dismiss(animated: false, completion: nil)
-        
     }
     
-}
-
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.hideKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+    func UIBuild() {
+    
+        mailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        //UIButton
+        loginButton.layer.borderColor = UIColor.white.cgColor
+        loginButton.layer.borderWidth = 1.5
+        loginButton.layer.cornerRadius = 18
+        loginButton.layer.shadowColor = UIColor.lightGray.cgColor
+        loginButton.layer.shadowOffset = CGSize(width: 1, height: 3)
+        loginButton.layer.shadowOpacity = 0.7
+        loginButton.layer.shadowRadius = 10
     }
-
-    @objc func hideKeyboard() {
-        view.endEditing(true)
-    }
+    
 }

@@ -51,6 +51,7 @@ class CheckMailViewController: UIViewController {
                         
                         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         let next: MainPageViewController = storyboard.instantiateInitialViewController() as! MainPageViewController
+                        self.present(next, animated: true, completion: nil)
                         
                     } else if self.auth.currentUser?.isEmailVerified == false {
                     //メール認証が成功していない時

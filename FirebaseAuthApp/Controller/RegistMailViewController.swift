@@ -23,31 +23,16 @@ class RegistMailViewController: UIViewController,UITextFieldDelegate, UITextView
         super.viewDidLoad()
 
         auth = Auth.auth()
-        
-//        mailTextField.underlined()
-//        passwordTextField.underlined()
-//        passwordAgainTextField.underlined()
-        
+            
         mailTextField.delegate = self
         passwordTextField.delegate = self
         passwordAgainTextField.delegate = self
-        goCheckButton.layer.cornerRadius = 18.0
         
-        //UIButton
-        goCheckButton.layer.borderColor = UIColor.white.cgColor
-        goCheckButton.layer.borderWidth = 1.5
-        goCheckButton.layer.cornerRadius = 18
-        goCheckButton.layer.shadowColor = UIColor.lightGray.cgColor
-        goCheckButton.layer.shadowOffset = CGSize(width: 1, height: 3)
-        goCheckButton.layer.shadowOpacity = 0.7
-        goCheckButton.layer.shadowRadius = 10
-        
-        //キーボード以外のタッチで閉じる
+        UIBuild()
         hideKeyboardWhenTappedAround()
         
     }
     
-    //returnキーを押した時にキーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         mailTextField.resignFirstResponder()
@@ -163,32 +148,29 @@ class RegistMailViewController: UIViewController,UITextFieldDelegate, UITextView
     
 
     @IBAction func backAction(_ sender: Any) {
-        let transition = CATransition()
-        transition.duration = 0.2
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromLeft
-        view.window!.layer.add(transition, forKey: kCATransition)
         
-        dismiss(animated: false, completion: nil)
+        sendLeftFromRight()
+        dismiss(animated: nil, completion: nil)
+    }
+    
+    func UIBuild() {
+    
+        goCheckButton.layer.cornerRadius = 18.0
+        
+        //UIButton
+        goCheckButton.layer.borderColor = UIColor.white.cgColor
+        goCheckButton.layer.borderWidth = 1.5
+        goCheckButton.layer.cornerRadius = 18
+        goCheckButton.layer.shadowColor = UIColor.lightGray.cgColor
+        goCheckButton.layer.shadowOffset = CGSize(width: 1, height: 3)
+        goCheckButton.layer.shadowOpacity = 0.7
+        goCheckButton.layer.shadowRadius = 10
+        
     }
     
 
 }
 
 
-//textfieldの下線部を追加するextension
-extension UITextField {
-    
-    func underlined(){
-        let border = CALayer()
-        let width = CGFloat(0.5)
-        border.borderColor = UIColor.lightGray.cgColor
-        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
-        border.borderWidth = width
-        self.layer.addSublayer(border)
-        self.layer.masksToBounds = true
-    }
-    
-}
 
 

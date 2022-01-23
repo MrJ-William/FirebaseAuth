@@ -20,40 +20,22 @@ class ExplainViewController: UIViewController,UIScrollViewDelegate {
         super.viewDidLoad()
 
         scrollView.isPagingEnabled = true
-        setUpScroll()
-        
+        scrollView.delegate = self
+        UIBuild()
+        AnimationSetting()
         // Do any additional setup after loading the view.
-        for i in 0...2 {
-            
-            let animationView = AnimationView()
-            let animation = Animation.named(onboardArray[i])
-            animationView.frame = CGRect(x: CGFloat(i) * view.frame.size.width, y: 0, width: view.frame.size.width, height: view.frame.size.height)
-            animationView.animation = animation
-            animationView.contentMode = .scaleAspectFit
-            animationView.animationSpeed = 0.8
-            animationView.loopMode = .loop
-            animationView.play()
-            scrollView.addSubview(animationView)
-            
-         }
         
     }
     
     @IBAction func skipped(_ sender: Any) {
         
         performSegue(withIdentifier: "selectLoginVC", sender: nil)
-        
-        let transition = CATransition()
-        transition.duration = 0.2
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromRight
-        view.window!.layer.add(transition, forKey: kCATransition)
+        sendRightFromLeft()
         
     }
     
-    func setUpScroll(){
+    func UIBuild(){
             
-        scrollView.delegate = self
         scrollView.contentSize = CGSize(width: view.frame.size.width * 3, height: view.frame.size.height)
         
         for i in 0...2 {
@@ -118,6 +100,22 @@ class ExplainViewController: UIViewController,UIScrollViewDelegate {
             }
         }
         
+    }
+    
+    func AnimationSetting() {
+        for i in 0...2 {
+            
+            let animationView = AnimationView()
+            let animation = Animation.named(onboardArray[i])
+            animationView.frame = CGRect(x: CGFloat(i) * view.frame.size.width, y: 0, width: view.frame.size.width, height: view.frame.size.height)
+            animationView.animation = animation
+            animationView.contentMode = .scaleAspectFit
+            animationView.animationSpeed = 0.8
+            animationView.loopMode = .loop
+            animationView.play()
+            scrollView.addSubview(animationView)
+            
+         }
     }
 
 }

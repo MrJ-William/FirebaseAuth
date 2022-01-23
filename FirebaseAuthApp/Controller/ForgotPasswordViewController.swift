@@ -22,25 +22,14 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         
         auth = Auth.auth()
 
-        
         mailTextField.delegate = self
         mailTextField.underlined()
-        sendButton.layer.cornerRadius = 18.0
         
-        //UIButton
-        sendButton.layer.borderColor = UIColor.white.cgColor
-        sendButton.layer.borderWidth = 1.5
-        sendButton.layer.cornerRadius = 18
-        sendButton.layer.shadowColor = UIColor.lightGray.cgColor
-        sendButton.layer.shadowOffset = CGSize(width: 1, height: 3)
-        sendButton.layer.shadowOpacity = 0.7
-        sendButton.layer.shadowRadius = 10
-        
-        //キーボード以外のタッチで閉じる
+        UIBuild()
         hideKeyboardWhenTappedAround()
     }
     
-    //returnキーを押した時にキーボードを閉じる
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         mailTextField.resignFirstResponder()
@@ -79,13 +68,21 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func backAction(_ sender: Any) {
-        let transition = CATransition()
-        transition.duration = 0.2
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromLeft
-        view.window!.layer.add(transition, forKey: kCATransition)
+        
+        sendLeftFromRight()
         dismiss(animated: false, completion: nil)
     }
    
+    func UIBuild() {
+        //UIButton
+        sendButton.layer.borderColor = UIColor.white.cgColor
+        sendButton.layer.borderWidth = 1.5
+        sendButton.layer.cornerRadius = 18
+        sendButton.layer.shadowColor = UIColor.lightGray.cgColor
+        sendButton.layer.shadowOffset = CGSize(width: 1, height: 3)
+        sendButton.layer.shadowOpacity = 0.7
+        sendButton.layer.shadowRadius = 10
+        
+    }
 
 }

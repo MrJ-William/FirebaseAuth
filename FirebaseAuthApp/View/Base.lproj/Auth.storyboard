@@ -277,7 +277,7 @@
                                 </state>
                                 <connections>
                                     <action selector="emailLogin:" destination="2BZ-L4-pnE" eventType="touchUpInside" id="GSK-As-uDK"/>
-                                    <segue destination="PR3-dC-hAP" kind="presentation" identifier="emailLoginVC" modalPresentationStyle="fullScreen" id="S4n-te-e8f"/>
+                                    <segue destination="PR3-dC-hAP" kind="presentation" identifier="emailLoginVC" animates="NO" modalPresentationStyle="fullScreen" id="S4n-te-e8f"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWC-Js-qK8">
@@ -368,7 +368,7 @@
                                 <connections>
                                     <action selector="emailLogin:" destination="2BZ-L4-pnE" eventType="touchUpInside" id="94g-qW-sFS"/>
                                     <action selector="emailLogin:" destination="7OM-j3-b2g" eventType="touchUpInside" id="I1f-ui-hgS"/>
-                                    <segue destination="YkF-Vw-EQQ" kind="presentation" identifier="login" modalPresentationStyle="fullScreen" id="YUb-ie-lhq"/>
+                                    <segue destination="YkF-Vw-EQQ" kind="presentation" identifier="login" animates="NO" modalPresentationStyle="fullScreen" id="YUb-ie-lhq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aam-G3-dR2">
@@ -419,7 +419,7 @@
         <!--Regist Mail View Controller-->
         <scene sceneID="UFM-UR-6DL">
             <objects>
-                <viewController storyboardIdentifier="mailView" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PR3-dC-hAP" customClass="registMailViewController" customModule="MrUnivercityApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mailView" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PR3-dC-hAP" customClass="RegistMailViewController" customModule="FirebaseAuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Ldj-No-YUT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

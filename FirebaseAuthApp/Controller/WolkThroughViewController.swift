@@ -15,13 +15,18 @@ class WolkThroughViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        startButton.layer.cornerRadius = 18
+        UIBuild()
 
     }
     
 
     @IBAction func nextVC(_ sender: Any) {
         performSegue(withIdentifier: "explainVC", sender: nil)
+        sendRightFromLeft()
+    }
+    
+    func UIBuild() {
+        startButton.layer.cornerRadius = 18
     }
     
 
