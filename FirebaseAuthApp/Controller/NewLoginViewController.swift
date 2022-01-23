@@ -9,8 +9,6 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import GoogleSignIn
-import CryptoKit
-import PKHUD
 
 class NewLoginViewController: UIViewController {
     
@@ -21,10 +19,6 @@ class NewLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //gmailLogin
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
-        
         UIBuild()
 
     }
@@ -34,12 +28,7 @@ class NewLoginViewController: UIViewController {
         
         if let _ = Auth.auth().currentUser?.uid {
             print("UserIDが存在しています。")
-            
-            //画面遷移
-            let settingRoleViewController = self.storyboard?.instantiateViewController(withIdentifier: "SettingRoleViewController") as! SettingRoleViewController
-            settingRoleViewController.modalPresentationStyle = .fullScreen
-            self.present(settingRoleViewController, animated: true, completion: nil)
-  
+            return
         } else {
            
             //ログイン処理をする
@@ -52,7 +41,7 @@ class NewLoginViewController: UIViewController {
     }
     
     @IBAction func back(_ sender: Any) {
-        dismiss(animated: nil, completion: nil)
+        dismiss(animated: false, completion: nil)
         sendLeftFromRight()
     }
 
@@ -72,51 +61,74 @@ class NewLoginViewController: UIViewController {
             
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let next: MainPageViewController = storyboard.instantiateInitialViewController() as! MainPageViewController
+            next.modalPresentationStyle = .fullScreen
             self.present(next, animated: true, completion: nil)
   
         } else {
             print("UserIDが存在しません。")
+
+            guard let clientID = FirebaseApp.app()?.options.clientID else { return }
             
-            //gmail signIn
-            GIDSignIn.sharedInstance()?.presentingViewController = self
-            GIDSignIn.sharedInstance().signIn()
+            // Create Google Sign In configuration object.
+            let config = GIDConfiguration(clientID: clientID)
             
-        }
-    
-    }
-    
-    //gmailログイン
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        print("Google Sing In didSignInForUser")
-        if let error = error {
-          print(error.localizedDescription)
-          return
-        }
-        
-        guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)
-        
-    // When user is signed in
-        Auth.auth().signIn(with: credential, completion: { (user, error) in
-            
-            if error != nil {
-                //ログイン成功
-                print("Login success")
-                //画面遷移
-                let settingRoleViewController = self.storyboard?.instantiateViewController(withIdentifier: "SettingRoleViewController") as! SettingRoleViewController
-                settingRoleViewController.modalPresentationStyle = .fullScreen
-                self.present(settingRoleViewController, animated: true, completion: nil)
-        
-            } else {
+            // Start the sign in flow!
+            GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
                 
-                //なぜnilになってしまうのかわからない。(credential)
-                print(error?.localizedDescription as Any)
-                return
+                if let error = error {
+                    // ...
+                    let alert = UIAlertController(title: "", message: "ユーザーIDまたはパスワードが間違っています。", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    print("ユーザーIDまたはパスワードが間違っています")
+                    
+                    return
+                }
+                
+                guard
+                    let authentication = user?.authentication,
+                    let idToken = authentication.idToken
+                else {
+                    return
+                }
+                
+                let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                               accessToken: authentication.accessToken)
+                
+                
+                // When user is signed in
+                Auth.auth().signIn(with: credential, completion: { (user, error) in
+                    if (user?.user) != nil {
+                        
+                        print(UserDefaults.standard.object(forKey: "userID") as Any)
+                        
+                        //ユーザーIDの取得
+                        let userID = Auth.auth().currentUser?.uid
+                        print("Current user id is \(String(describing: userID))")
+                        UserDefaults.standard.set(userID, forKey: "userID")
+                        
+                        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let next: MainPageViewController = storyboard.instantiateInitialViewController() as! MainPageViewController
+                        self.present(next, animated: true, completion: nil)
+                        
+                    } else {
+                        
+                        let alert = UIAlertController(title: "", message: "ユーザーIDまたはパスワードが間違っています。", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        
+                        print("ユーザーIDまたはパスワードが間違っています")
+                        return
+                        
+                    }
+                })
+                // ...
             }
             
-        })
-    }
+        }
     
+    }
     
     func UIBuild() {
         

@@ -150,7 +150,7 @@ class RegistMailViewController: UIViewController,UITextFieldDelegate, UITextView
     @IBAction func backAction(_ sender: Any) {
         
         sendLeftFromRight()
-        dismiss(animated: nil, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
     
     func UIBuild() {

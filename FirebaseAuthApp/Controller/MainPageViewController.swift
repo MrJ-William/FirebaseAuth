@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-import PKHUD
 
 class MainPageViewController: UIViewController {
     
@@ -18,25 +17,17 @@ class MainPageViewController: UIViewController {
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        HUD.show(.progress)
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
         if UserDefaults.standard.object(forKey: "userID") != nil{
-            
-            userID = UserDefaults.standard.object(forKey: "userID") as! String
+
+            let userID = UserDefaults.standard.object(forKey: "userID") as! String
             print(userID)
-            
+
         }else{
-            
-            let sb: UIStoryboard! = UIStoryboard(name: "Auth", bundle: nil)
-            let loginVC = sb.instantiateViewController(withIdentifier: "WolkThroughViewController")
-            
-            loginVC.modalPresentationStyle = .fullScreen
-            self.present(loginVC, animated: true, completion: nil)
-            
+            moveToAuth()
         }
-        
-        HUD.hide()
     }
     
     @IBAction func logout(_ sender: Any) {
@@ -49,16 +40,13 @@ class MainPageViewController: UIViewController {
             
             do{
                 try Auth.auth().signOut()
+                UserDefaults.standard.removeObject(forKey: "userID")
                 
             }catch let error as NSError{
                 print(error)
             }
             
-            let storyboard: UIStoryboard = UIStoryboard(name: "Auth", bundle: nil)
-            let next: WolkThroughViewController = storyboard.instantiateInitialViewController() as! WolkThroughViewController
-            next.modalPresentationStyle = .fullScreen
-            self.present(next, animated: true, completion: nil)
-            
+            self.moveToAuth()
             print("Logout")
         })
         
@@ -78,5 +66,13 @@ class MainPageViewController: UIViewController {
         
     }
     
+    func moveToAuth() {
+        // 画面遷移
+        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+        let next: WolkThroughViewController = storyboard.instantiateInitialViewController() as! WolkThroughViewController
+        next.modalPresentationStyle = .fullScreen
+        self.present(next, animated: false, completion: nil)
+        print("画面遷移")
+    }
     
 }

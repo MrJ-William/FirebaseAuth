@@ -21,8 +21,8 @@ class WolkThroughViewController: UIViewController {
     
 
     @IBAction func nextVC(_ sender: Any) {
-        performSegue(withIdentifier: "explainVC", sender: nil)
         sendRightFromLeft()
+        performSegue(withIdentifier: "explainVC", sender: nil)
     }
     
     func UIBuild() {
