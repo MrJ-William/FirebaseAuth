@@ -8,20 +8,52 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Page View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="MainPageViewController" customModule="FirebaseAuthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ログイン成功" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgL-WF-kFP">
+                                <rect key="frame" x="40" y="128" width="334" height="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfE-au-CQa">
+                                <rect key="frame" x="40" y="432" width="334" height="32"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" subtitle="">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="ログアウト">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="HiraginoSans-W3"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logout:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dk9-60-Tu7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wgL-WF-kFP" secondAttribute="trailing" constant="40" id="0o4-JW-V3h"/>
+                            <constraint firstItem="wgL-WF-kFP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="84" id="1BG-sw-qfw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zfE-au-CQa" secondAttribute="trailing" constant="40" id="3Re-Mi-mMD"/>
+                            <constraint firstItem="zfE-au-CQa" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="KOT-ke-28c"/>
+                            <constraint firstItem="zfE-au-CQa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="SWc-Dm-SHa"/>
+                            <constraint firstItem="wgL-WF-kFP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="u0H-0x-H5z"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25" y="135"/>
+            <point key="canvasLocation" x="-196" y="123"/>
         </scene>
     </scenes>
     <resources>

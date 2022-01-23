@@ -44,11 +44,13 @@ class CheckMailViewController: UIViewController {
                     //メール認証が成功している時
                     if self.auth.currentUser?.isEmailVerified == true {
                         
-                        let settingRoleViewController = self.storyboard?.instantiateViewController(withIdentifier: "SettingRoleViewController") as! SettingRoleViewController
-                               
-                        settingRoleViewController.modalPresentationStyle = .fullScreen
-                         self.present(settingRoleViewController, animated: true, completion: nil)
+                        //ユーザーIDの取得
+                        let userID = Auth.auth().currentUser?.uid
+                        print("Current user id is \(String(describing: userID))")
+                        UserDefaults.standard.set(userID, forKey: "userID")
                         
+                        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let next: MainPageViewController = storyboard.instantiateInitialViewController() as! MainPageViewController
                         
                     } else if self.auth.currentUser?.isEmailVerified == false {
                     //メール認証が成功していない時
